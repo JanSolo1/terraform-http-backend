@@ -5,7 +5,7 @@ python3 -m venv venv
 pip install -r ./requirements.txt
 
 # Define the service content
-read -r -d '' SERVICE_CONTENT << EOM
+SERVICE_CONTENT="
 [Unit]
 Description=Python HTTP Server
 After=network.target
@@ -18,7 +18,7 @@ Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
-EOM
+"
 
 # Write the service content to the service file
 echo "${SERVICE_CONTENT}" | sudo tee /etc/systemd/system/http_server.service
