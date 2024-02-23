@@ -1,8 +1,8 @@
 #!/bin/bash
 
 python3 -m venv venv
-source venv/bin/activate
-pip install -r $(pwd)/requirements.txt
+source ./venv/bin/activate
+pip install -r ./requirements.txt
 
 # Define the service content
 read -r -d '' SERVICE_CONTENT << EOM
